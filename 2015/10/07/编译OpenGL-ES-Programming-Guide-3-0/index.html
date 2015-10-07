@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>编译OpenGL ES Programming Guide 3.0 | 特立独行的瞄</title>
+  <meta name="author" content="melody-rain">
+  
+  <meta name="description" content="代码在github，下载后有Android纯Java代码，也有纯C++代码。
+Java工程可以用IDEA打开编译然后安装apk。 
+C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="编译OpenGL ES Programming Guide 3.0"/>
+  <meta property="og:site_name" content="特立独行的瞄"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="特立独行的瞄" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">特立独行的瞄</a></h1>
+  <h2><a href="/">专注Android，视频相关，图像处理，图形学</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-07T14:22:15.000Z"><a href="/2015/10/07/编译OpenGL-ES-Programming-Guide-3-0/">2015-10-07</a></time>
+      
+      
+  
+    <h1 class="title">编译OpenGL ES Programming Guide 3.0</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>代码在<a href="https://github.com/danginsburg/opengles3-book">github</a>，下载后有Android纯Java代码，也有纯C++代码。</p>
+<p>Java工程可以用IDEA打开编译然后安装apk。 </p>
+<p>C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译生成apk文件再安装到手机中。</p>
+<p>使用模拟器的例子需要使用CMake+本地编译器编译，且需要安装PC端的OpenGL ES SDK。我安装了高通的Adreno SDK，但是用VS 2015编译成功后运行程序时崩溃，不知什么原因。Adreno号称支持OpenGL ES 3.0, 但是lib里只有2.0的。不知道是不是OpenGL ES版本不对造成的崩溃。</p>
+<p>例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> opengles3-book/Chapter_2/Hello_Triangle/Android/jni</span><br><span class="line">$ ndk-build</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esShader.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esShapes.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esTransform.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil_Android.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= Hello_Triangle.c</span><br><span class="line">[armeabi] Compile thumb  : android_native_app_glue &lt;= android_native_app_glue.c</span><br><span class="line">[armeabi] StaticLibrary  : libandroid_native_app_glue.a</span><br><span class="line">[armeabi] SharedLibrary  : libHello_Triangle.so</span><br><span class="line">[armeabi] Install        : libHello_Triangle.so =&gt; libs/armeabi/libHello_Triangle.so</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cd</span> ../</span><br><span class="line">$ ls</span><br><span class="line">-rw-rw-r-- <span class="number">1</span> melody melody  <span class="number">615</span> <span class="number">10</span>月  <span class="number">7</span> <span class="number">17</span>:<span class="number">57</span> Android.iml</span><br><span class="line">-rw-rw-r-- <span class="number">1</span> melody melody  <span class="number">989</span> <span class="number">10</span>月  <span class="number">7</span> <span class="number">17</span>:<span class="number">45</span> AndroidManifest.xml</span><br><span class="line">drwxrwxr-x <span class="number">2</span> melody melody <span class="number">4096</span> <span class="number">10</span>月  <span class="number">7</span> <span class="number">17</span>:<span class="number">55</span> jni</span><br></pre></td></tr></table></figure></p>
+<p>IDEA打开这个工程，然后编译后在out目录中生成<br>./out/production/Android/Android.apk<br>./out/production/Android/Android.unaligned.apk<br>安装apk文件到手机即可。<br>运行结果如下：<br><img src="/img/hello_trangle.png" alt="HelloTriangle"></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL-ES-Programming-Guide-3-0/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:github.com/melody-rain/melody-rain.github.io">
+  </form>
+</div>
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 melody-rain
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

@@ -49,6 +49,44 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-10-07T14:22:15.000Z"><a href="/2015/10/07/编译OpenGL-ES-Programming-Guide-3-0/">2015-10-07</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/07/编译OpenGL-ES-Programming-Guide-3-0/">编译OpenGL ES Programming Guide 3.0</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>代码在<a href="https://github.com/danginsburg/opengles3-book">github</a>，下载后有Android纯Java代码，也有纯C++代码。</p>
+<p>Java工程可以用IDEA打开编译然后安装apk。 </p>
+<p>C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译生成apk文件再安装到手机中。</p>
+<p>使用模拟器的例子需要使用CMake+本地编译器编译，且需要安装PC端的OpenGL ES SDK。我安装了高通的Adreno SDK，但是用VS 2015编译成功后运行程序时崩溃，不知什么原因。Adreno号称支持OpenGL ES 3.0, 但是lib里只有2.0的。不知道是不是OpenGL ES版本不对造成的崩溃。</p>
+<p>例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> opengles3-book/Chapter_2/Hello_Triangle/Android/jni</span><br><span class="line">$ ndk-build</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esShader.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esShapes.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esTransform.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil_Android.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= Hello_Triangle.c</span><br><span class="line">[armeabi] Compile thumb  : android_native_app_glue &lt;= android_native_app_glue.c</span><br><span class="line">[armeabi] StaticLibrary  : libandroid_native_app_glue.a</span><br><span class="line">[armeabi] SharedLibrary  : libHello_Triangle.so</span><br><span class="line">[armeabi] Install        : libHello_Triangle.so =&gt; libs/armeabi/libHello_Triangle.so</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cd</span> ../</span><br><span class="line">$ ls</span><br><span class="line">-rw-rw-r-- <span class="number">1</span> melody melody  <span class="number">615</span> <span class="number">10</span>月  <span class="number">7</span> <span class="number">17</span>:<span class="number">57</span> Android.iml</span><br><span class="line">-rw-rw-r-- <span class="number">1</span> melody melody  <span class="number">989</span> <span class="number">10</span>月  <span class="number">7</span> <span class="number">17</span>:<span class="number">45</span> AndroidManifest.xml</span><br><span class="line">drwxrwxr-x <span class="number">2</span> melody melody <span class="number">4096</span> <span class="number">10</span>月  <span class="number">7</span> <span class="number">17</span>:<span class="number">55</span> jni</span><br></pre></td></tr></table></figure></p>
+<p>IDEA打开这个工程，然后编译后在out目录中生成<br>./out/production/Android/Android.apk<br>./out/production/Android/Android.unaligned.apk<br>安装apk文件到手机即可。<br>运行结果如下：<br><img src="/img/hello_trangle.png" alt="HelloTriangle"></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-07-06T14:36:04.000Z"><a href="/2015/07/06/如何在github上利用hexo创建静态博客/">2015-07-06</a></time>
       
       
