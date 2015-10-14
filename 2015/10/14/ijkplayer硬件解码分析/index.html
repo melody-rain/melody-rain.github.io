@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ijkplayer硬件解码分析 | 特立独行的瞄</title>
+  <meta name="author" content="melody-rain">
+  
+  <meta name="description" content="总流程图：12345678910stream_component_open() -&amp;gt;ffpipeline_open_video_decoder() -&amp;gt;func_open_video_decoder() -&amp;gt;ffpipenode_create_video_decoder_from_">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="ijkplayer硬件解码分析"/>
+  <meta property="og:site_name" content="特立独行的瞄"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="http://zipperary.com/atom.xml" title="特立独行的瞄" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">特立独行的瞄</a></h1>
+  <h2><a href="/">专注Android，视频相关，图像处理，图形学</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+      <li><a href="/tools">工具</a></li>
+    
+	<li> <a href="/atom.xml">RSS</a> </li>
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-14T15:19:38.000Z"><a href="/2015/10/14/ijkplayer硬件解码分析/">2015-10-14</a></time>
+      
+      
+  
+    <h1 class="title">ijkplayer硬件解码分析</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>总流程图：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">stream_component_open</span><span class="params">()</span></span> -&gt;</span><br><span class="line"><span class="function"><span class="title">ffpipeline_open_video_decoder</span><span class="params">()</span></span> -&gt;</span><br><span class="line"><span class="function"><span class="title">func_open_video_decoder</span><span class="params">()</span></span> -&gt;</span><br><span class="line"><span class="function"><span class="title">ffpipenode_create_video_decoder_from_android_mediacodec</span><span class="params">()</span></span> -&gt;</span><br><span class="line"><span class="function"><span class="title">reconfigure_codec_l</span><span class="params">()</span></span> \----&gt; <span class="function"><span class="title">SDL_AMediaFormatJava_createVideoFormat</span><span class="params">()</span></span></span><br><span class="line">                       \----&gt; <span class="function"><span class="title">create_codec_l</span><span class="params">()</span></span> -&gt; <span class="function"><span class="title">SDL_AMediaCodecJava_createByCodecName</span><span class="params">()</span></span> -&gt;</span><br><span class="line">                        \</span><br><span class="line">                         \----&gt; <span class="function"><span class="title">SDL_AMediaCodec_configure_surface</span><span class="params">()</span></span> -&gt; </span><br><span class="line">						       <span class="function"><span class="title">func_configure_surface</span><span class="params">()</span></span>[<span class="function"><span class="title">SDL_AMediaCodecJava_configure_surface</span><span class="params">()</span></span>] -&gt;</span><br><span class="line">                               <span class="function"><span class="title">jmid_configure</span><span class="params">()</span></span>[<span class="function"><span class="title">configure</span><span class="params">(MediaFormat format, Surface surface, MediaCrypto crypto, int flags)</span></span> java]</span><br></pre></td></tr></table></figure>                               </p>
+<ol>
+<li><p>ff_ffplay.c 中stream_component_open()打开video stream.</p>
+</li>
+<li><p>调用<br>ffpipeline_open_video_decoder()</p>
+</li>
+<li><p>调用<br>func_open_video_decoder()</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> IJKFF_Pipenode *func_open_video_decoder(IJKFF_Pipeline *pipeline, FFPlayer *ffp)</span><br><span class="line">&#123;</span><br><span class="line">    IJKFF_Pipeline_Opaque *opaque = pipeline-&gt;opaque;</span><br><span class="line">    IJKFF_Pipenode        *node = <span class="keyword">NULL</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (opaque-&gt;mediacodec_enabled) <span class="comment">//mediacodec_enabled可以在Java代码中设置以开启硬件解码. 由此处进入libstagefright的ACodec</span></span><br><span class="line">        node = ffpipenode_create_video_decoder_from_android_mediacodec(ffp, pipeline, opaque-&gt;weak_vout);</span><br><span class="line">    <span class="keyword">if</span> (!node) <span class="comment">//如果失败则进入ffmpeg的软件解码</span></span><br><span class="line">        node = ffpipenode_create_video_decoder_from_ffplay(ffp);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>首先通过SDL_AMediaFormatJava_createVideoFormat()调用 MediaFormat.java中的createVideoFormat()来配置各种metadata.然后在create_codec_l()中通过<br>SDL_AMediaCodecJava_createByCodecName()或者SDL_AMediaCodecJava_createDecoderByType()调用MediaCodec.java的createByCodecName()或者createDecoderByType().<br>Media</p>
+</li>
+</ol>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">SDL_AMediaFormat <span class="built_in">*</span>SDL_AMediaFormatJava_createVideoFormat<span class="params">(JNIEnv *env, const char *mime, int width, int height)</span></span><br><span class="line">&#123;</span><br><span class="line">    SDLTRACE<span class="params">(<span class="string">"%s"</span>, __func__)</span>;</span><br><span class="line">    jstring jmime = <span class="params">(*env)</span>-&gt;NewStringUTF<span class="params">(env, mime)</span>;</span><br><span class="line">    <span class="keyword">if</span> <span class="params">(SDL_JNI_CatchException<span class="params">(env)</span> || !jmime)</span> &#123;</span><br><span class="line">        return NULL;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//调用MediaFormat.java的createVideoFormat(),方便以后给MediaCodec.cpp传递各种在message中的metadata.</span></span><br><span class="line">    jobject local_android_media_format = <span class="params">(*env)</span>-&gt;CallStaticObjectMethod<span class="params">(env, g_clazz.clazz, g_clazz.jmid_createVideoFormat, jmime, width, height)</span>;</span><br><span class="line">    SDL_JNI_DeleteLocalRefP<span class="params">(env, &amp;jmime)</span>;</span><br><span class="line">    <span class="keyword">if</span> <span class="params">(SDL_JNI_CatchException<span class="params">(env)</span> || !local_android_media_format)</span> &#123;</span><br><span class="line">        return NULL;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    jobject global_android_media_format = <span class="params">(*env)</span>-&gt;NewGlobalRef<span class="params">(env, local_android_media_format)</span>;</span><br><span class="line">    SDL_JNI_DeleteLocalRefP<span class="params">(env, &amp;local_android_media_format)</span>;</span><br><span class="line">    <span class="keyword">if</span> <span class="params">(SDL_JNI_CatchException<span class="params">(env)</span> || !global_android_media_format)</span> &#123;</span><br><span class="line">        return NULL;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    SDL_AMediaFormat <span class="built_in">*</span>aformat = SDL_AMediaFormat_CreateInternal<span class="params">(sizeof<span class="params">(SDL_AMediaFormat_Opaque)</span>)</span>;</span><br><span class="line">    <span class="keyword">if</span> <span class="params">(!aformat)</span> &#123;</span><br><span class="line">        SDL_JNI_DeleteGlobalRefP<span class="params">(env, &amp;global_android_media_format)</span>;</span><br><span class="line">        return NULL;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    setup_aformat<span class="params">(aformat, global_android_media_format)</span>;</span><br><span class="line">	<span class="comment">//这是一个设置mediaformat的使用例子.由于ACodec.cpp中有一个rotation-degrees描述视频旋转的.由于我们平时用手机竖屏拍摄的视频保存后其实是横向保存的，所以这类视频的rotation不为0.ijkplayer没有将rotation-degrees的值传给ACodec导致视频显示时是按照横向保存的方式显示的.</span></span><br><span class="line">	<span class="comment">//这样我们可以使用SDL_AMediaFormat_setInt32(aformat, "rotation-degrees", 90);来纠正视频显示的方向.</span></span><br><span class="line">    SDL_AMediaFormat_setInt32<span class="params">(aformat, AMEDIAFORMAT_KEY_MAX_INPUT_SIZE, <span class="number">0</span>)</span>;</span><br><span class="line">    return aformat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>                               
+
+      
+    </div>
+    <footer>
+      
+        
+        
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    
+    <a href="/2015/10/08/Compile-WebRTC/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zippera"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:github.com/melody-rain/melody-rain.github.io">
+  </form>
+</div>
+
+  
+
+  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=8&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1870303707&verifier=3f14a54d&dpc=1"></iframe>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><section>
+Theme of <a href="https://github.com/zippera/lightum">Lightum</a>, Improved from <a href="https://github.com/hexojs/hexo-theme-light">Light</a>, by <a href="/">zippera</a> 
+</section>
+<div class="clearfix"></div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+
+<a href="https://github.com/melody-rain"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
