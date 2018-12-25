@@ -13,7 +13,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"melody-rain","sameAs":["https://github.com/melody-rain","https://www.linkedin.com/profile/","mailto"],"image":"_images/avata.jpeg"},"articleBody":"代码在github，下载后有Android纯Java代码，也有纯C++代码。\nJava工程可以用IDEA打开编译然后安装apk。 \nC++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译生成apk文件再安装到手机中。\n使用模拟器的例子需要使用CMake+本地编译器编译，且需要安装PC端的OpenGL ES SDK。我安装了高通的Adreno SDK，但是用VS 2015编译成功后运行程序时崩溃，不知什么原因。Adreno号称支持OpenGL ES 3.0, 但是lib里只有2.0的。不知道是不是OpenGL ES版本不对造成的崩溃。\n例子：123456789101112131415161718$ cd opengles3-book/Chapter_2/Hello_Triangle/Android/jni$ ndk-build[armeabi] Compile thumb  : Hello_Triangle &lt;= esShader.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esShapes.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esTransform.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil_Android.c[armeabi] Compile thumb  : Hello_Triangle &lt;= Hello_Triangle.c[armeabi] Compile thumb  : android_native_app_glue &lt;= android_native_app_glue.c[armeabi] StaticLibrary  : libandroid_native_app_glue.a[armeabi] SharedLibrary  : libHello_Triangle.so[armeabi] Install        : libHello_Triangle.so =&gt; libs/armeabi/libHello_Triangle.so$ cd ../$ ls-rw-rw-r-- 1 melody melody  615 10月  7 17:57 Android.iml-rw-rw-r-- 1 melody melody  989 10月  7 17:45 AndroidManifest.xmldrwxrwxr-x 2 melody melody 4096 10月  7 17:55 jni\nIDEA打开这个工程，然后编译后在out目录中生成./out/production/Android/Android.apk./out/production/Android/Android.unaligned.apk安装apk文件到手机即可。运行结果如下：\n","dateCreated":"2015-10-07T22:22:15+08:00","dateModified":"2015-10-07T22:50:30+08:00","datePublished":"2015-10-07T22:22:15+08:00","description":"","headline":"编译OpenGL ES Programming Guide 3.0","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/"},"publisher":{"@type":"Organization","name":"melody-rain","sameAs":["https://github.com/melody-rain","https://www.linkedin.com/profile/","mailto"],"image":"_images/avata.jpeg","logo":{"@type":"ImageObject","url":"_images/avata.jpeg"}},"url":"http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"melody-rain","sameAs":["https://github.com/melody-rain","https://www.linkedin.com/profile/","mailto"],"image":"avata.jpeg"},"articleBody":"代码在github，下载后有Android纯Java代码，也有纯C++代码。\nJava工程可以用IDEA打开编译然后安装apk。 \nC++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译生成apk文件再安装到手机中。\n使用模拟器的例子需要使用CMake+本地编译器编译，且需要安装PC端的OpenGL ES SDK。我安装了高通的Adreno SDK，但是用VS 2015编译成功后运行程序时崩溃，不知什么原因。Adreno号称支持OpenGL ES 3.0, 但是lib里只有2.0的。不知道是不是OpenGL ES版本不对造成的崩溃。\n例子：123456789101112131415161718$ cd opengles3-book/Chapter_2/Hello_Triangle/Android/jni$ ndk-build[armeabi] Compile thumb  : Hello_Triangle &lt;= esShader.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esShapes.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esTransform.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil_Android.c[armeabi] Compile thumb  : Hello_Triangle &lt;= Hello_Triangle.c[armeabi] Compile thumb  : android_native_app_glue &lt;= android_native_app_glue.c[armeabi] StaticLibrary  : libandroid_native_app_glue.a[armeabi] SharedLibrary  : libHello_Triangle.so[armeabi] Install        : libHello_Triangle.so =&gt; libs/armeabi/libHello_Triangle.so$ cd ../$ ls-rw-rw-r-- 1 melody melody  615 10月  7 17:57 Android.iml-rw-rw-r-- 1 melody melody  989 10月  7 17:45 AndroidManifest.xmldrwxrwxr-x 2 melody melody 4096 10月  7 17:55 jni\nIDEA打开这个工程，然后编译后在out目录中生成./out/production/Android/Android.apk./out/production/Android/Android.unaligned.apk安装apk文件到手机即可。运行结果如下：\n","dateCreated":"2015-10-07T22:22:15+08:00","dateModified":"2015-10-07T22:50:30+08:00","datePublished":"2015-10-07T22:22:15+08:00","description":"","headline":"编译OpenGL ES Programming Guide 3.0","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/"},"publisher":{"@type":"Organization","name":"melody-rain","sameAs":["https://github.com/melody-rain","https://www.linkedin.com/profile/","mailto"],"image":"avata.jpeg","logo":{"@type":"ImageObject","url":"avata.jpeg"}},"url":"http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/"}</script>
     <meta name="description" content="代码在github，下载后有Android纯Java代码，也有纯C++代码。 Java工程可以用IDEA打开编译然后安装apk。  C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译生成apk文件再安装到手机中。 使用模拟器的例子需要使用CMake+本地编译器编译，且需要安装PC端">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="编译OpenGL ES Programming Guide 3.0">
@@ -32,7 +32,7 @@
         
     
     
-        <meta property="og:image" content="http://github.com/melody-rain/melody-rain.github.io/assets/images/_images/avata.jpeg"/>
+        <meta property="og:image" content="http://github.com/melody-rain/melody-rain.github.io/assets/images/avata.jpeg"/>
     
     
     
@@ -66,7 +66,7 @@
             <a class="header-right-picture " href="#about">
         
         
-            <img class="header-picture" src="/assets/images/_images/avata.jpeg" alt="Bild des Autors">
+            <img class="header-picture" src="/assets/images/avata.jpeg" alt="Bild des Autors">
         
         </a>
     
@@ -84,7 +84,7 @@
         
             <div class="sidebar-profile">
                 <a href="/#about">
-                    <img class="sidebar-profile-picture" src="/assets/images/_images/avata.jpeg" alt="Bild des Autors">
+                    <img class="sidebar-profile-picture" src="/assets/images/avata.jpeg" alt="Bild des Autors">
                 </a>
                 <h4 class="sidebar-profile-name">melody-rain</h4>
                 
@@ -447,7 +447,7 @@
             <i class="fa fa-times"></i>
         </div>
         
-            <img id="about-card-picture" src="/assets/images/_images/avata.jpeg" alt="Bild des Autors">
+            <img id="about-card-picture" src="/assets/images/avata.jpeg" alt="Bild des Autors">
         
             <h4 id="about-card-name">melody-rain</h4>
         
