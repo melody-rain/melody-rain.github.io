@@ -13,7 +13,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"melody-rain","sameAs":["https://github.com/","http://stackoverflow.com/users","https://twitter.com/","https://facebook.com/","https://plus.google.com/","https://www.linkedin.com/profile/","mailto"]},"articleBody":"代码在github，下载后有Android纯Java代码，也有纯C++代码。\nJava工程可以用IDEA打开编译然后安装apk。 \nC++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译生成apk文件再安装到手机中。\n使用模拟器的例子需要使用CMake+本地编译器编译，且需要安装PC端的OpenGL ES SDK。我安装了高通的Adreno SDK，但是用VS 2015编译成功后运行程序时崩溃，不知什么原因。Adreno号称支持OpenGL ES 3.0, 但是lib里只有2.0的。不知道是不是OpenGL ES版本不对造成的崩溃。\n例子：123456789101112131415161718$ cd opengles3-book/Chapter_2/Hello_Triangle/Android/jni$ ndk-build[armeabi] Compile thumb  : Hello_Triangle &lt;= esShader.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esShapes.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esTransform.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil_Android.c[armeabi] Compile thumb  : Hello_Triangle &lt;= Hello_Triangle.c[armeabi] Compile thumb  : android_native_app_glue &lt;= android_native_app_glue.c[armeabi] StaticLibrary  : libandroid_native_app_glue.a[armeabi] SharedLibrary  : libHello_Triangle.so[armeabi] Install        : libHello_Triangle.so =&gt; libs/armeabi/libHello_Triangle.so$ cd ../$ ls-rw-rw-r-- 1 melody melody  615 10月  7 17:57 Android.iml-rw-rw-r-- 1 melody melody  989 10月  7 17:45 AndroidManifest.xmldrwxrwxr-x 2 melody melody 4096 10月  7 17:55 jni\nIDEA打开这个工程，然后编译后在out目录中生成./out/production/Android/Android.apk./out/production/Android/Android.unaligned.apk安装apk文件到手机即可。运行结果如下：\n","dateCreated":"2015-10-07T22:22:15+08:00","dateModified":"2015-10-07T22:50:30+08:00","datePublished":"2015-10-07T22:22:15+08:00","description":"","headline":"编译OpenGL ES Programming Guide 3.0","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/"},"publisher":{"@type":"Organization","name":"melody-rain","sameAs":["https://github.com/","http://stackoverflow.com/users","https://twitter.com/","https://facebook.com/","https://plus.google.com/","https://www.linkedin.com/profile/","mailto"]},"url":"http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"melody-rain","sameAs":["https://github.com/melody-rain","https://www.linkedin.com/profile/","mailto"]},"articleBody":"代码在github，下载后有Android纯Java代码，也有纯C++代码。\nJava工程可以用IDEA打开编译然后安装apk。 \nC++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译生成apk文件再安装到手机中。\n使用模拟器的例子需要使用CMake+本地编译器编译，且需要安装PC端的OpenGL ES SDK。我安装了高通的Adreno SDK，但是用VS 2015编译成功后运行程序时崩溃，不知什么原因。Adreno号称支持OpenGL ES 3.0, 但是lib里只有2.0的。不知道是不是OpenGL ES版本不对造成的崩溃。\n例子：123456789101112131415161718$ cd opengles3-book/Chapter_2/Hello_Triangle/Android/jni$ ndk-build[armeabi] Compile thumb  : Hello_Triangle &lt;= esShader.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esShapes.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esTransform.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil_Android.c[armeabi] Compile thumb  : Hello_Triangle &lt;= Hello_Triangle.c[armeabi] Compile thumb  : android_native_app_glue &lt;= android_native_app_glue.c[armeabi] StaticLibrary  : libandroid_native_app_glue.a[armeabi] SharedLibrary  : libHello_Triangle.so[armeabi] Install        : libHello_Triangle.so =&gt; libs/armeabi/libHello_Triangle.so$ cd ../$ ls-rw-rw-r-- 1 melody melody  615 10月  7 17:57 Android.iml-rw-rw-r-- 1 melody melody  989 10月  7 17:45 AndroidManifest.xmldrwxrwxr-x 2 melody melody 4096 10月  7 17:55 jni\nIDEA打开这个工程，然后编译后在out目录中生成./out/production/Android/Android.apk./out/production/Android/Android.unaligned.apk安装apk文件到手机即可。运行结果如下：\n","dateCreated":"2015-10-07T22:22:15+08:00","dateModified":"2015-10-07T22:50:30+08:00","datePublished":"2015-10-07T22:22:15+08:00","description":"","headline":"编译OpenGL ES Programming Guide 3.0","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/"},"publisher":{"@type":"Organization","name":"melody-rain","sameAs":["https://github.com/melody-rain","https://www.linkedin.com/profile/","mailto"]},"url":"http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/"}</script>
     <meta name="description" content="代码在github，下载后有Android纯Java代码，也有纯C++代码。 Java工程可以用IDEA打开编译然后安装apk。  C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译生成apk文件再安装到手机中。 使用模拟器的例子需要使用CMake+本地编译器编译，且需要安装PC端">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="编译OpenGL ES Programming Guide 3.0">
@@ -133,46 +133,10 @@
             
                 <li class="sidebar-button">
                     
-                        <a class="sidebar-button-link " href="https://github.com/" target="_blank" rel="noopener" title="GitHub">
+                        <a class="sidebar-button-link " href="https://github.com/melody-rain" target="_blank" rel="noopener" title="GitHub">
                     
                         <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
                         <span class="sidebar-button-desc">GitHub</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a class="sidebar-button-link " href="http://stackoverflow.com/users" target="_blank" rel="noopener" title="Stack Overflow">
-                    
-                        <i class="sidebar-button-icon fab fa-stack-overflow" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Stack Overflow</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a class="sidebar-button-link " href="https://twitter.com/" target="_blank" rel="noopener" title="Twitter">
-                    
-                        <i class="sidebar-button-icon fab fa-twitter" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Twitter</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a class="sidebar-button-link " href="https://facebook.com/" target="_blank" rel="noopener" title="Facebook">
-                    
-                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Facebook</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a class="sidebar-button-link " href="https://plus.google.com/" target="_blank" rel="noopener" title="Google Plus">
-                    
-                        <i class="sidebar-button-icon fab fa-google-plus" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Google Plus</span>
                     </a>
             </li>
             
