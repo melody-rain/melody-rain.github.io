@@ -2,24 +2,23 @@
 
 <!DOCTYPE HTML>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>编译OpenGL ES Programming Guide 3.0 | 特立独行的瞄</title>
+  <title>如何在github上利用hexo创建静态博客 | 特立独行的瞄</title>
   <meta name="author" content="melody-rain">
   
-  <meta name="description" content="代码在github，下载后有Android纯Java代码，也有纯C++代码。
-Java工程可以用IDEA打开编译然后安装apk。 
-C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译">
+  <meta name="description" content="默认已经安装git for windows，由此可以使用git bash。所有操作均在git bash中进行。
+安装node.jsnode.js安装后如果npm在git bash中无效则需要将npm添加到系统环境变量中。安装hexo在git bash中输入12$ npm install -g hex">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="编译OpenGL ES Programming Guide 3.0"/>
-  <meta property="og:site_name" content="特立独行的瞄"/>
+  <meta property="og:title" content="如何在github上利用hexo创建静态博客">
+  <meta property="og:site_name" content="特立独行的瞄">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   <link href="/favicon.ico" rel="icon" type="image/x-ico">
@@ -28,7 +27,7 @@ C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动�
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
 </head>
-
+</html>
 
 <body>
   <header id="header" class="inner">
@@ -48,7 +47,7 @@ C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动�
       <li><a href="/tools">工具</a></li>
     
 	<li> <a href="/atom.xml">RSS</a> </li>
-<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href="javascript:(function() {
 	function c() {
 		var e = document.createElement("link");
 		e.setAttribute("type", "text/css");
@@ -197,7 +196,7 @@ C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动�
 			O.push(A)
 		}
 	}
-})()    '>High一下</a> </li>
+})()    ">High一下</a> </li>
 
   </ul>
   <div class="clearfix"></div>
@@ -222,22 +221,34 @@ C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动�
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-10-07T14:22:15.000Z"><a href="/2015/10/07/编译OpenGL-ES-Programming-Guide-3-0/">2015-10-07</a></time>
+        <time datetime="2015-07-06T14:36:04.000Z"><a href="/2015/07/06/»Á∫Œ‘⁄github…œ¿˚”√hexo¥¥Ω®æ≤Ã¨≤©øÕ/">2015-07-06</a></time>
       
       
   
-    <h1 class="title">编译OpenGL ES Programming Guide 3.0</h1>
+    <h1 class="title">如何在github上利用hexo创建静态博客</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>代码在<a href="https://github.com/danginsburg/opengles3-book">github</a>，下载后有Android纯Java代码，也有纯C++代码。</p>
-<p>Java工程可以用IDEA打开编译然后安装apk。 </p>
-<p>C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译生成apk文件再安装到手机中。</p>
-<p>使用模拟器的例子需要使用CMake+本地编译器编译，且需要安装PC端的OpenGL ES SDK。我安装了高通的Adreno SDK，但是用VS 2015编译成功后运行程序时崩溃，不知什么原因。Adreno号称支持OpenGL ES 3.0, 但是lib里只有2.0的。不知道是不是OpenGL ES版本不对造成的崩溃。</p>
-<p>例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> opengles3-book/Chapter_2/Hello_Triangle/Android/jni</span><br><span class="line">$ ndk-build</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esShader.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esShapes.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esTransform.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil_Android.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= Hello_Triangle.c</span><br><span class="line">[armeabi] Compile thumb  : android_native_app_glue &lt;= android_native_app_glue.c</span><br><span class="line">[armeabi] StaticLibrary  : libandroid_native_app_glue.a</span><br><span class="line">[armeabi] SharedLibrary  : libHello_Triangle.so</span><br><span class="line">[armeabi] Install        : libHello_Triangle.so =&gt; libs/armeabi/libHello_Triangle.so</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cd</span> ../</span><br><span class="line">$ ls</span><br><span class="line">-rw-rw-r-- <span class="number">1</span> melody melody  <span class="number">615</span> <span class="number">10</span>月  <span class="number">7</span> <span class="number">17</span>:<span class="number">57</span> Android.iml</span><br><span class="line">-rw-rw-r-- <span class="number">1</span> melody melody  <span class="number">989</span> <span class="number">10</span>月  <span class="number">7</span> <span class="number">17</span>:<span class="number">45</span> AndroidManifest.xml</span><br><span class="line">drwxrwxr-x <span class="number">2</span> melody melody <span class="number">4096</span> <span class="number">10</span>月  <span class="number">7</span> <span class="number">17</span>:<span class="number">55</span> jni</span><br></pre></td></tr></table></figure></p>
-<p>IDEA打开这个工程，然后编译后在out目录中生成<br>./out/production/Android/Android.apk<br>./out/production/Android/Android.unaligned.apk<br>安装apk文件到手机即可。<br>运行结果如下：<br><img src="/img/hello_trangle.png" alt="HelloTriangle"></p>
+        <h3 id="默认已经安装git_for_windows，由此可以使用git_bash。所有操作均在git_bash中进行。">默认已经安装git for windows，由此可以使用git bash。所有操作均在git bash中进行。</h3><hr>
+<h2 id="安装node-js">安装node.js</h2><h2 id="node-js"><a href="http://nodejs.org/" target="_blank" rel="noopener">node.js</a></h2><h2 id="安装后如果npm在git_bash中无效则需要将npm添加到系统环境变量中。">安装后如果npm在git bash中无效则需要将npm添加到系统环境变量中。</h2><h2 id="安装hexo">安装hexo</h2><p>在git bash中输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line">$ npm install hexo --save</span><br></pre></td></tr></table></figure></p>
+<h2 id="搭建博客">搭建博客</h2><h3 id="创建博客目录">创建博客目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> <span class="built_in">where</span>/you/like</span><br><span class="line">$ mkdir my_local_blog</span><br><span class="line">$ <span class="built_in">cd</span> my_local_blog</span><br></pre></td></tr></table></figure>
+<h3 id="创建hexo目录">创建hexo目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+<h3 id="安装hexo插件">安装hexo插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-archive --save</span><br><span class="line">npm install hexo-generator-category --save</span><br><span class="line">npm install hexo-generator-tag --save</span><br><span class="line">npm install hexo-server --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-deployer-heroku --save</span><br><span class="line">npm install hexo-deployer-rsync --save</span><br><span class="line">npm install hexo-deployer-openshift --save</span><br><span class="line">npm install hexo-renderer-marked@0.2 --save</span><br><span class="line">npm install hexo-renderer-stylus@0.2 --save</span><br><span class="line">npm install hexo-generator-feed@1 --save</span><br><span class="line">npm install hexo-generator-sitemap@1 --save</span><br><span class="line">npm install hexo-renderer-ejs --save</span><br></pre></td></tr></table></figure>
+<h3 id="生成博客">生成博客</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure></p>
+<h3 id="查看本地博客效果">查看本地博客效果</h3><p>通过<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></p>
+<p>启动本地服务器，然后在浏览器的地址栏输入<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，就可以测试博客了。</p>
+<h2 id="发布博客">发布博客</h2><p>首先配置_config.yml文件(此文件在hexo init之后会被覆盖掉，建议备份)。在此文件中加入</p>
+<p>需要通过输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
+<p>来配置ssh</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Deployment</span></span><br><span class="line"><span class="meta">## Docs: http:<span class="comment">//hexo.io/docs/deployment.html</span></span></span><br><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repository:</span> git@github.com:username/username.github.com.git <span class="meta">#&lt;--这里使用ssh</span></span><br><span class="line"><span class="symbol">  branch:</span> master</span><br></pre></td></tr></table></figure>
+<p>这样之后就可以通过</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
+<p>将你的博客发布到github上了。此时你可以发现你的’my_local_blog’目录下的’.deploy_git’已经被push到github上了。以后每次执行’hexo deploy’都会将更新的博客push到github上。</p>
 
       
     </div>
@@ -255,7 +266,7 @@ C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动�
 <span class="bds_more"></span>
 <a class="shareCount"></a>
 </div>
-<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447"></script>
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">
 document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
@@ -268,12 +279,10 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
 
 
 
- <nav id="pagination" >
+ <nav id="pagination">
     
-    <a href="/2015/10/08/Compile-WebRTC/" class="alignleft prev" >上一页</a>
+    <a href="/2015/10/07/±‡“ÎOpenGL-ES-Programming-Guide-3-0/" class="alignleft prev">上一页</a>
     
-    
-    <a href="/2015/07/06/如何在github上利用hexo创建静态博客/" class="alignright next" >下一页</a>
     
     <div class="clearfix"></div>
 </nav>
@@ -311,7 +320,7 @@ var duoshuoQuery = {short_name:"zippera"};
 
   
 
-  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=8&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1870303707&verifier=3f14a54d&dpc=1"></iframe>
+  <iframe width="100%" height="550" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=8&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1870303707&verifier=3f14a54d&dpc=1"></iframe>
 
 </aside>
     <div class="clearfix"></div>

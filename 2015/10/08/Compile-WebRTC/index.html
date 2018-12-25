@@ -2,7 +2,7 @@
 
 <!DOCTYPE HTML>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>Compile WebRTC | 特立独行的瞄</title>
@@ -14,11 +14,11 @@ Follow the README.md of the repo to setup develop environment on ubuntu 14.04.No
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Compile WebRTC"/>
-  <meta property="og:site_name" content="特立独行的瞄"/>
+  <meta property="og:title" content="Compile WebRTC">
+  <meta property="og:site_name" content="特立独行的瞄">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   <link href="/favicon.ico" rel="icon" type="image/x-ico">
@@ -27,7 +27,7 @@ Follow the README.md of the repo to setup develop environment on ubuntu 14.04.No
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
 </head>
-
+</html>
 
 <body>
   <header id="header" class="inner">
@@ -47,7 +47,7 @@ Follow the README.md of the repo to setup develop environment on ubuntu 14.04.No
       <li><a href="/tools">工具</a></li>
     
 	<li> <a href="/atom.xml">RSS</a> </li>
-<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href="javascript:(function() {
 	function c() {
 		var e = document.createElement("link");
 		e.setAttribute("type", "text/css");
@@ -196,7 +196,7 @@ Follow the README.md of the repo to setup develop environment on ubuntu 14.04.No
 			O.push(A)
 		}
 	}
-})()    '>High一下</a> </li>
+})()    ">High一下</a> </li>
 
   </ul>
   <div class="clearfix"></div>
@@ -238,7 +238,7 @@ Follow the README.md of the repo to setup develop environment on ubuntu 14.04.No
 <p>To specify the arch(for example armv8), you may<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">export</span> WEBRTC_ARCH=armv8</span><br></pre></td></tr></table></figure></p>
 <p>By default, it supports x86, x86_64, armv7 and armv8. To compile WebRTC for only one arch, do not use <strong>build_apprtc</strong> but<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ execute_build</span><br></pre></td></tr></table></figure></p>
 <p>Look into build.sh <strong>build_apprtc</strong> calls <strong>execute_build</strong> to compile for each arch.</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">build_apprtc() </span>&#123;</span><br><span class="line">    <span class="preprocessor">export</span> WEBRTC_ARCH<span class="label">=armv7</span></span><br><span class="line">    prepare_gyp_defines &amp;&amp;</span><br><span class="line">    execute_build</span><br><span class="line"></span><br><span class="line">    <span class="preprocessor">export</span> WEBRTC_ARCH<span class="label">=armv8</span></span><br><span class="line">    prepare_gyp_defines &amp;&amp;</span><br><span class="line">    execute_build</span><br><span class="line"></span><br><span class="line">    <span class="preprocessor">export</span> WEBRTC_ARCH<span class="label">=x86</span></span><br><span class="line">    prepare_gyp_defines &amp;&amp;</span><br><span class="line">    execute_build</span><br><span class="line"></span><br><span class="line">    <span class="preprocessor">export</span> WEBRTC_ARCH<span class="label">=x86_64</span></span><br><span class="line">    prepare_gyp_defines &amp;&amp;</span><br><span class="line">    execute_build</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">build_apprtc() &#123;</span><br><span class="line">    <span class="builtin-name">export</span> <span class="attribute">WEBRTC_ARCH</span>=armv7</span><br><span class="line">    prepare_gyp_defines &amp;&amp;</span><br><span class="line">    execute_build</span><br><span class="line"></span><br><span class="line">    <span class="builtin-name">export</span> <span class="attribute">WEBRTC_ARCH</span>=armv8</span><br><span class="line">    prepare_gyp_defines &amp;&amp;</span><br><span class="line">    execute_build</span><br><span class="line"></span><br><span class="line">    <span class="builtin-name">export</span> <span class="attribute">WEBRTC_ARCH</span>=x86</span><br><span class="line">    prepare_gyp_defines &amp;&amp;</span><br><span class="line">    execute_build</span><br><span class="line"></span><br><span class="line">    <span class="builtin-name">export</span> <span class="attribute">WEBRTC_ARCH</span>=x86_64</span><br><span class="line">    prepare_gyp_defines &amp;&amp;</span><br><span class="line">    execute_build</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>After successfully compiling WebRTC you will find apks in out_android_xx.</p>
 <p>AppRTCDemo’s source code locates under /android/webrtc/src/webrtc/example/androidapp/</p>
 <p>WebRTCDemo’s source code locates under /android/webrtc/src/webrtc/example/android/</p>
@@ -259,7 +259,7 @@ Follow the README.md of the repo to setup develop environment on ubuntu 14.04.No
 <span class="bds_more"></span>
 <a class="shareCount"></a>
 </div>
-<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447"></script>
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">
 document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
@@ -272,12 +272,12 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
 
 
 
- <nav id="pagination" >
+ <nav id="pagination">
     
-    <a href="/2015/10/14/ijkplayer硬件解码分析/" class="alignleft prev" >上一页</a>
+    <a href="/2015/10/14/ijkplayer”≤º˛Ω‚¬Î∑÷Œˆ/" class="alignleft prev">上一页</a>
     
     
-    <a href="/2015/10/07/编译OpenGL-ES-Programming-Guide-3-0/" class="alignright next" >下一页</a>
+    <a href="/2015/10/07/±‡“ÎOpenGL-ES-Programming-Guide-3-0/" class="alignright next">下一页</a>
     
     <div class="clearfix"></div>
 </nav>
@@ -315,7 +315,7 @@ var duoshuoQuery = {short_name:"zippera"};
 
   
 
-  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=8&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1870303707&verifier=3f14a54d&dpc=1"></iframe>
+  <iframe width="100%" height="550" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=8&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1870303707&verifier=3f14a54d&dpc=1"></iframe>
 
 </aside>
     <div class="clearfix"></div>
