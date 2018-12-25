@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[特立独行的瞄]]></title>
-  <subtitle><![CDATA[专注Android，视频相关，图像处理，图形学]]></subtitle>
+  <subtitle><![CDATA[专注计算机视觉和深度学习]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://github.com/melody-rain/melody-rain.github.io/"/>
   <updated>2015-10-14T16:00:48.000Z</updated>

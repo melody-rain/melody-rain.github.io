@@ -1,329 +1,518 @@
 
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="特立独行的瞄">
+    <title>Archiv - 特立独行的瞄</title>
+    <meta name="author" content="melody-rain">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="特立独行的瞄">
+<meta property="og:url" content="http://github.com/melody-rain/melody-rain.github.io/archives/index.html">
+<meta property="og:site_name" content="特立独行的瞄">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="特立独行的瞄">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-c4ozcsklz4kht2pebhp44xorvyverh23toayhn7i6ubrpyedak24hv1v0hyd.min.css">
+    <!--STYLES END-->
+    
 
-<!DOCTYPE HTML>
-<html>
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
-  <title>归档 | 特立独行的瞄</title>
-  <meta name="author" content="melody-rain">
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  
-  <meta property="og:site_name" content="特立独行的瞄">
-
-  
-    <meta property="og:image" content="undefined">
-  
-
-  <link href="/favicon.ico" rel="icon" type="image/x-ico">
-  <link rel="alternate" href="http://zipperary.com/atom.xml" title="特立独行的瞄" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+    
 </head>
-</html>
 
-<body>
-  <header id="header" class="inner">
-<div class="alignleft">
-  <h1><a href="/">特立独行的瞄</a></h1>
-  <h2><a href="/">专注Android，视频相关，图像处理，图形学</a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">首页</a></li>
-    
-      <li><a href="/archives">归档</a></li>
-    
-      <li><a href="/about">关于</a></li>
-    
-      <li><a href="/tools">工具</a></li>
-    
-	<li> <a href="/atom.xml">RSS</a> </li>
-<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href="javascript:(function() {
-	function c() {
-		var e = document.createElement("link");
-		e.setAttribute("type", "text/css");
-		e.setAttribute("rel", "stylesheet");
-		e.setAttribute("href", f);
-		e.setAttribute("class", l);
-		document.body.appendChild(e)
-	}
- 
-	function h() {
-		var e = document.getElementsByClassName(l);
-		for (var t = 0; t < e.length; t++) {
-			document.body.removeChild(e[t])
-		}
-	}
- 
-	function p() {
-		var e = document.createElement("div");
-		e.setAttribute("class", a);
-		document.body.appendChild(e);
-		setTimeout(function() {
-			document.body.removeChild(e)
-		}, 100)
-	}
- 
-	function d(e) {
-		return {
-			height : e.offsetHeight,
-			width : e.offsetWidth
-		}
-	}
- 
-	function v(i) {
-		var s = d(i);
-		return s.height > e && s.height < n && s.width > t && s.width < r
-	}
- 
-	function m(e) {
-		var t = e;
-		var n = 0;
-		while (!!t) {
-			n += t.offsetTop;
-			t = t.offsetParent
-		}
-		return n
-	}
- 
-	function g() {
-		var e = document.documentElement;
-		if (!!window.innerWidth) {
-			return window.innerHeight
-		} else if (e && !isNaN(e.clientHeight)) {
-			return e.clientHeight
-		}
-		return 0
-	}
- 
-	function y() {
-		if (window.pageYOffset) {
-			return window.pageYOffset
-		}
-		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-	}
- 
-	function E(e) {
-		var t = m(e);
-		return t >= w && t <= b + w
-	}
- 
-	function S() {
-		var e = document.createElement("audio");
-		e.setAttribute("class", l);
-		e.src = i;
-		e.loop = false;
-		e.addEventListener("canplay", function() {
-			setTimeout(function() {
-				x(k)
-			}, 500);
-			setTimeout(function() {
-				N();
-				p();
-				for (var e = 0; e < O.length; e++) {
-					T(O[e])
-				}
-			}, 15500)
-		}, true);
-		e.addEventListener("ended", function() {
-			N();
-			h()
-		}, true);
-		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
-		document.body.appendChild(e);
-		e.play()
-	}
- 
-	function x(e) {
-		e.className += " " + s + " " + o
-	}
- 
-	function T(e) {
-		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
-	}
- 
-	function N() {
-		var e = document.getElementsByClassName(s);
-		var t = new RegExp("\\b" + s + "\\b");
-		for (var n = 0; n < e.length; ) {
-			e[n].className = e[n].className.replace(t, "")
-		}
-	}
- 
-	var e = 30;
-	var t = 30;
-	var n = 350;
-	var r = 350;
-	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
-	var s = "mw-harlem_shake_me";
-	var o = "im_first";
-	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
-	var a = "mw-strobe_light";
-	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
-	var l = "mw_added_css";
-	var b = g();
-	var w = y();
-	var C = document.getElementsByTagName("*");
-	var k = null;
-	for (var L = 0; L < C.length; L++) {
-		var A = C[L];
-		if (v(A)) {
-			if (E(A)) {
-				k = A;
-				break
-			}
-		}
-	}
-	if (A === null) {
-		console.warn("Could not find a node of the right size. Please try a different page.");
-		return
-	}
-	c();
-	S();
-	var O = [];
-	for (var L = 0; L < C.length; L++) {
-		var A = C[L];
-		if (v(A)) {
-			O.push(A)
-		}
-	}
-})()    ">High一下</a> </li>
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
 
-  </ul>
-  <div class="clearfix"></div>
+
+    
+
+<header id="header" data-behavior="1">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">特立独行的瞄</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="1">
+    <div class="sidebar-container">
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Kategorien">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Kategorien</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archiv">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archiv</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link open-algolia-search" href="#search" title="Suche">
+                    
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Suche</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="#about" title="Über">
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Über</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="http://stackoverflow.com/users" target="_blank" rel="noopener" title="Stack Overflow">
+                    
+                        <i class="sidebar-button-icon fab fa-stack-overflow" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Stack Overflow</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://twitter.com/" target="_blank" rel="noopener" title="Twitter">
+                    
+                        <i class="sidebar-button-icon fab fa-twitter" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Twitter</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://facebook.com/" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://plus.google.com/" target="_blank" rel="noopener" title="Google Plus">
+                    
+                        <i class="sidebar-button-icon fab fa-google-plus" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Google Plus</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/profile/" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="E-Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">E-Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/atom.xml" title="RSS">
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
 </nav>
-<div class="clearfix"></div></header>
-  <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title">归档</h2>
 
-
-  <div class="archive">
+            
+            <div id="main" data-behavior="1"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+    <section class="postShorten-group main-content-wrap">
     
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-10-14T15:19:38.000Z"><a href="/2015/10/14/ijkplayer硬件解码分析/">2015-10-14</a></time>
-            
-              <h1 class="title"><a href="/2015/10/14/ijkplayer硬件解码分析/">ijkplayer硬件解码分析</a></h1>
-            
-          </header>
-        </div>
-      </article>
     
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-10-08T13:56:16.000Z"><a href="/2015/10/08/Compile-WebRTC/">2015-10-08</a></time>
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
             
-              <h1 class="title"><a href="/2015/10/08/Compile-WebRTC/">Compile WebRTC</a></h1>
-            
-          </header>
-        </div>
-      </article>
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2015/10/14/ijkplayer硬件解码分析/">
+                            ijkplayer硬件解码分析
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2015-10-14T23:19:38+08:00">
+	
+		    14 10月 2015
+    	
+    </time>
     
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-10-07T14:22:15.000Z"><a href="/2015/10/07/编译OpenGL ES Programming Guide 3.0/">2015-10-07</a></time>
-            
-              <h1 class="title"><a href="/2015/10/07/编译OpenGL ES Programming Guide 3.0/">编译OpenGL ES Programming Guide 3.0</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-07-06T14:36:04.000Z"><a href="/2015/07/06/如何在github上利用hexo创建静态博客/">2015-07-06</a></time>
-            
-              <h1 class="title"><a href="/2015/07/06/如何在github上利用hexo创建静态博客/">如何在github上利用hexo创建静态博客</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-  </div>
-</div></div>
-    <aside id="sidebar" class="alignright">
-  <div class="search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="q" value="site:github.com/melody-rain/melody-rain.github.io">
-  </form>
 </div>
 
-  
+            </div>
+            
+                <div class="postShorten-content">
+                    <p>总流程图：<br><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">stream_component_open<span class="function"><span class="params">()</span> -&gt;</span></span><br><span class="line">ffpipeline_open_video_decoder<span class="function"><span class="params">()</span> -&gt;</span></span><br><span class="line">func_open_video_decoder<span class="function"><span class="params">()</span> -&gt;</span></span><br><span class="line">ffpipenode_create_video_decoder_from_android_mediacodec<span class="function"><span class="params">()</span> -&gt;</span></span><br><span class="line">reconfigure_codec_l() <span class="string">\----&gt;</span> SDL_AMediaFormatJava_createVideoFormat()</span><br><span class="line">                       <span class="string">\----&gt;</span> create_codec_l<span class="function"><span class="params">()</span> -&gt;</span> SDL_AMediaCodecJava_createByCodecName<span class="function"><span class="params">()</span> -&gt;</span></span><br><span class="line">                        <span class="string">\</span></span><br><span class="line">                         <span class="string">\----&gt;</span> SDL_AMediaCodec_configure_surface<span class="function"><span class="params">()</span> -&gt;</span> </span><br><span class="line">						       func_configure_surface()[SDL_AMediaCodecJava_configure_surface()]<span class="function"> -&gt;</span></span><br><span class="line">                               jmid_configure()[configure(MediaFormat format, Surface surface, MediaCrypto crypto, int flags) java]</span><br></pre></td></tr></table></figure>                               </p>
+<ol>
+<li><p>ff_ffplay.c 中stream_component_open()打开video stream.</p>
+</li>
+<li><p>调用<br>ffpipeline_open_video_decoder()</p>
+</li>
+<li><p>调用<br>func_open_video_decoder()</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">static IJKFF_Pipenode *func_open_video_decoder(IJKFF_Pipeline *pipeline, FFPlayer *ffp)</span><br><span class="line">&#123;</span><br><span class="line">    IJKFF_Pipeline_Opaque *opaque = pipeline-&gt;opaque;</span><br><span class="line">    IJKFF_Pipenode        *<span class="keyword">node</span> <span class="title">= NULL</span>;</span><br><span class="line"></span><br><span class="line">    if (opaque-&gt;mediacodec_enabled) //mediacodec_enabled可以在Java代码中设置以开启硬件解码. 由此处进入libstagefright的ACodec</span><br><span class="line">        <span class="keyword">node</span> <span class="title">= ffpipenode_create_video_decoder_from_android_mediacodec</span>(ffp, pipeline, opaque-&gt;weak_vout);</span><br><span class="line">    if (!<span class="keyword">node</span><span class="title">) //如果失败则进入ffmpeg</span>的软件解码</span><br><span class="line">        <span class="keyword">node</span> <span class="title">= ffpipenode_create_video_decoder_from_ffplay</span>(ffp);</span><br><span class="line"></span><br><span class="line">    return <span class="keyword">node</span><span class="title">;</span></span><br><span class="line"><span class="title">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>首先通过SDL_AMediaFormatJava_createVideoFormat()调用 MediaFormat.java中的createVideoFormat()来配置各种metadata.然后在create_codec_l()中通过<br>SDL_AMediaCodecJava_createByCodecName()或者SDL_AMediaCodecJava_createDecoderByType()调用MediaCodec.java的createByCodecName()或者createDecoderByType().<br>Media</p>
+</li>
+</ol>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">SDL_AMediaFormat *SDL_AMediaFormatJava_createVideoFormat(JNIEnv *<span class="keyword">env</span>, const char *mime, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span><br><span class="line">&#123;</span><br><span class="line">    SDLTRACE(<span class="string">"%s"</span>, __func__);</span><br><span class="line">    jstring jmime = (*<span class="keyword">env</span>)-&gt;NewStringUTF(<span class="keyword">env</span>, mime);</span><br><span class="line">    <span class="keyword">if</span> (SDL_JNI_CatchException(<span class="keyword">env</span>) || !jmime) &#123;</span><br><span class="line">        <span class="keyword">return</span> NULL;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//调用MediaFormat.java的createVideoFormat(),方便以后给MediaCodec.cpp传递各种在message中的metadata.</span></span><br><span class="line">    jobject local_android_media_format = (*<span class="keyword">env</span>)-&gt;CallStaticObjectMethod(<span class="keyword">env</span>, g_clazz.clazz, g_clazz.jmid_createVideoFormat, jmime, width, height);</span><br><span class="line">    SDL_JNI_DeleteLocalRefP(<span class="keyword">env</span>, &amp;jmime);</span><br><span class="line">    <span class="keyword">if</span> (SDL_JNI_CatchException(<span class="keyword">env</span>) || !local_android_media_format) &#123;</span><br><span class="line">        <span class="keyword">return</span> NULL;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    jobject global_android_media_format = (*<span class="keyword">env</span>)-&gt;NewGlobalRef(<span class="keyword">env</span>, local_android_media_format);</span><br><span class="line">    SDL_JNI_DeleteLocalRefP(<span class="keyword">env</span>, &amp;local_android_media_format);</span><br><span class="line">    <span class="keyword">if</span> (SDL_JNI_CatchException(<span class="keyword">env</span>) || !global_android_media_format) &#123;</span><br><span class="line">        <span class="keyword">return</span> NULL;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    SDL_AMediaFormat *aformat = SDL_AMediaFormat_CreateInternal(sizeof(SDL_AMediaFormat_Opaque));</span><br><span class="line">    <span class="keyword">if</span> (!aformat) &#123;</span><br><span class="line">        SDL_JNI_DeleteGlobalRefP(<span class="keyword">env</span>, &amp;global_android_media_format);</span><br><span class="line">        <span class="keyword">return</span> NULL;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    setup_aformat(aformat, global_android_media_format);</span><br><span class="line">	<span class="comment">//这是一个设置mediaformat的使用例子.由于ACodec.cpp中有一个rotation-degrees描述视频旋转的.由于我们平时用手机竖屏拍摄的视频保存后其实是横向保存的，所以这类视频的rotation不为0.ijkplayer没有将rotation-degrees的值传给ACodec导致视频显示时是按照横向保存的方式显示的.</span></span><br><span class="line">	<span class="comment">//这样我们可以使用SDL_AMediaFormat_setInt32(aformat, "rotation-degrees", 90);来纠正视频显示的方向.</span></span><br><span class="line">    SDL_AMediaFormat_setInt32(aformat, AMEDIAFORMAT_KEY_MAX_INPUT_SIZE, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> aformat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>                               
 
-  <iframe width="100%" height="550" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=8&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1870303707&verifier=3f14a54d&dpc=1"></iframe>
+                    
+                        
 
-</aside>
-    <div class="clearfix"></div>
-  </div>
-  <footer id="footer" class="inner"><section>
-Theme of <a href="https://github.com/zippera/lightum">Lightum</a>, Improved from <a href="https://github.com/hexojs/hexo-theme-light">Light</a>, by <a href="/">zippera</a> 
+                    
+                    
+                        <p>
+                            <a href="/2015/10/14/ijkplayer硬件解码分析/#post-footer" class="postShorten-excerpt_link link">
+                                Kommentieren und teilen
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+            <a href="/2015/10/14/ijkplayer硬件解码分析/">
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" src="undefined">
+                </div>
+            </a>
+            
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2015/10/08/Compile-WebRTC/">
+                            Compile WebRTC
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2015-10-08T21:56:16+08:00">
+	
+		    08 10月 2015
+    	
+    </time>
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p>Get and compile WebRTC with <a href="https://github.com/pristineio/webrtc-build-scripts">webrtc-build-scripts</a>.</p>
+<p>Follow the README.md of the repo to setup develop environment on ubuntu 14.04.<br>Notice that you may need VPN if you have no access to google.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> android/build.sh <span class="comment"># setup several commands to pull and compile WebRTC code</span></span><br><span class="line">$ install_dependencies <span class="comment"># install some needed libs </span></span><br><span class="line">$ install_dependencies <span class="comment"># pull WebRTC source code</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">export</span> WEBRTC_DEBUG=<span class="literal">true</span> <span class="comment"># with this you compile for debug</span></span><br><span class="line">$ build_apprtc <span class="comment"># compile WebRTC and the example AppRTCDemo for all archs</span></span><br></pre></td></tr></table></figure>
+<p>To compile WebRTCDemo,<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ninja -C /out/out_android_xx/Debug WebRTCDemo <span class="comment">#xx stands for the arch of the target platform</span></span><br></pre></td></tr></table></figure></p>
+<p>To specify the arch(for example armv8), you may<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">export</span> WEBRTC_ARCH=armv8</span><br></pre></td></tr></table></figure></p>
+<p>By default, it supports x86, x86_64, armv7 and armv8. To compile WebRTC for only one arch, do not use <strong>build_apprtc</strong> but<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ execute_build</span><br></pre></td></tr></table></figure></p>
+<p>Look into build.sh <strong>build_apprtc</strong> calls <strong>execute_build</strong> to compile for each arch.</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">build_apprtc() &#123;</span><br><span class="line">    <span class="builtin-name">export</span> <span class="attribute">WEBRTC_ARCH</span>=armv7</span><br><span class="line">    prepare_gyp_defines &amp;&amp;</span><br><span class="line">    execute_build</span><br><span class="line"></span><br><span class="line">    <span class="builtin-name">export</span> <span class="attribute">WEBRTC_ARCH</span>=armv8</span><br><span class="line">    prepare_gyp_defines &amp;&amp;</span><br><span class="line">    execute_build</span><br><span class="line"></span><br><span class="line">    <span class="builtin-name">export</span> <span class="attribute">WEBRTC_ARCH</span>=x86</span><br><span class="line">    prepare_gyp_defines &amp;&amp;</span><br><span class="line">    execute_build</span><br><span class="line"></span><br><span class="line">    <span class="builtin-name">export</span> <span class="attribute">WEBRTC_ARCH</span>=x86_64</span><br><span class="line">    prepare_gyp_defines &amp;&amp;</span><br><span class="line">    execute_build</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>After successfully compiling WebRTC you will find apks in out_android_xx.</p>
+<p>AppRTCDemo’s source code locates under /android/webrtc/src/webrtc/example/androidapp/</p>
+<p>WebRTCDemo’s source code locates under /android/webrtc/src/webrtc/example/android/</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2015/10/08/Compile-WebRTC/#post-footer" class="postShorten-excerpt_link link">
+                                Kommentieren und teilen
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+            <a href="/2015/10/08/Compile-WebRTC/">
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" src="undefined">
+                </div>
+            </a>
+            
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2015/10/07/编译OpenGL ES Programming Guide 3.0/">
+                            编译OpenGL ES Programming Guide 3.0
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2015-10-07T22:22:15+08:00">
+	
+		    07 10月 2015
+    	
+    </time>
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p>代码在<a href="https://github.com/danginsburg/opengles3-book">github</a>，下载后有Android纯Java代码，也有纯C++代码。</p>
+<p>Java工程可以用IDEA打开编译然后安装apk。 </p>
+<p>C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译生成apk文件再安装到手机中。</p>
+<p>使用模拟器的例子需要使用CMake+本地编译器编译，且需要安装PC端的OpenGL ES SDK。我安装了高通的Adreno SDK，但是用VS 2015编译成功后运行程序时崩溃，不知什么原因。Adreno号称支持OpenGL ES 3.0, 但是lib里只有2.0的。不知道是不是OpenGL ES版本不对造成的崩溃。</p>
+<p>例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> opengles3-book/Chapter_2/Hello_Triangle/Android/jni</span><br><span class="line">$ ndk-build</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esShader.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esShapes.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esTransform.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil_Android.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= Hello_Triangle.c</span><br><span class="line">[armeabi] Compile thumb  : android_native_app_glue &lt;= android_native_app_glue.c</span><br><span class="line">[armeabi] StaticLibrary  : libandroid_native_app_glue.a</span><br><span class="line">[armeabi] SharedLibrary  : libHello_Triangle.so</span><br><span class="line">[armeabi] Install        : libHello_Triangle.so =&gt; libs/armeabi/libHello_Triangle.so</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cd</span> ../</span><br><span class="line">$ ls</span><br><span class="line">-rw-rw-r-- 1 melody melody  615 10月  7 17:57 Android.iml</span><br><span class="line">-rw-rw-r-- 1 melody melody  989 10月  7 17:45 AndroidManifest.xml</span><br><span class="line">drwxrwxr-x 2 melody melody 4096 10月  7 17:55 jni</span><br></pre></td></tr></table></figure></p>
+<p>IDEA打开这个工程，然后编译后在out目录中生成<br>./out/production/Android/Android.apk<br>./out/production/Android/Android.unaligned.apk<br>安装apk文件到手机即可。<br>运行结果如下：<br><img src="/img/hello_trangle.png" alt="HelloTriangle"></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2015/10/07/编译OpenGL ES Programming Guide 3.0/#post-footer" class="postShorten-excerpt_link link">
+                                Kommentieren und teilen
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+            <a href="/2015/10/07/编译OpenGL ES Programming Guide 3.0/">
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" src="undefined">
+                </div>
+            </a>
+            
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2015/07/06/如何在github上利用hexo创建静态博客/">
+                            如何在github上利用hexo创建静态博客
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2015-07-06T22:36:04+08:00">
+	
+		    06 7月 2015
+    	
+    </time>
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h3 id="默认已经安装git_for_windows，由此可以使用git_bash。所有操作均在git_bash中进行。">默认已经安装git for windows，由此可以使用git bash。所有操作均在git bash中进行。</h3><hr>
+<h2 id="安装node-js">安装node.js</h2><h2 id="node-js"><a href="http://nodejs.org/" target="_blank" rel="noopener">node.js</a></h2><h2 id="安装后如果npm在git_bash中无效则需要将npm添加到系统环境变量中。">安装后如果npm在git bash中无效则需要将npm添加到系统环境变量中。</h2><h2 id="安装hexo">安装hexo</h2><p>在git bash中输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line">$ npm install hexo --save</span><br></pre></td></tr></table></figure></p>
+<h2 id="搭建博客">搭建博客</h2><h3 id="创建博客目录">创建博客目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> <span class="built_in">where</span>/you/like</span><br><span class="line">$ mkdir my_local_blog</span><br><span class="line">$ <span class="built_in">cd</span> my_local_blog</span><br></pre></td></tr></table></figure>
+<h3 id="创建hexo目录">创建hexo目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+<h3 id="安装hexo插件">安装hexo插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-archive --save</span><br><span class="line">npm install hexo-generator-category --save</span><br><span class="line">npm install hexo-generator-tag --save</span><br><span class="line">npm install hexo-server --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-deployer-heroku --save</span><br><span class="line">npm install hexo-deployer-rsync --save</span><br><span class="line">npm install hexo-deployer-openshift --save</span><br><span class="line">npm install hexo-renderer-marked@0.2 --save</span><br><span class="line">npm install hexo-renderer-stylus@0.2 --save</span><br><span class="line">npm install hexo-generator-feed@1 --save</span><br><span class="line">npm install hexo-generator-sitemap@1 --save</span><br><span class="line">npm install hexo-renderer-ejs --save</span><br></pre></td></tr></table></figure>
+<h3 id="生成博客">生成博客</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure></p>
+<h3 id="查看本地博客效果">查看本地博客效果</h3><p>通过<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></p>
+<p>启动本地服务器，然后在浏览器的地址栏输入<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，就可以测试博客了。</p>
+<h2 id="发布博客">发布博客</h2><p>首先配置_config.yml文件(此文件在hexo init之后会被覆盖掉，建议备份)。在此文件中加入</p>
+<p>需要通过输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
+<p>来配置ssh</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Deployment</span></span><br><span class="line"><span class="meta">## Docs: http:<span class="comment">//hexo.io/docs/deployment.html</span></span></span><br><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repository:</span> git@github.com:username/username.github.com.git <span class="meta">#&lt;--这里使用ssh</span></span><br><span class="line"><span class="symbol">  branch:</span> master</span><br></pre></td></tr></table></figure>
+<p>这样之后就可以通过</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
+<p>将你的博客发布到github上了。此时你可以发现你的’my_local_blog’目录下的’.deploy_git’已经被push到github上了。以后每次执行’hexo deploy’都会将更新的博客push到github上。</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2015/07/06/如何在github上利用hexo创建静态博客/#post-footer" class="postShorten-excerpt_link link">
+                                Kommentieren und teilen
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+            <a href="/2015/07/06/如何在github上利用hexo创建静态博客/">
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" src="undefined">
+                </div>
+            </a>
+            
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">Seite 1 von 1</li>
+    </ul>
+</div>
+
 </section>
-<div class="clearfix"></div>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 melody-rain. All Rights Reserved.
+    </span>
 </footer>
-  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
+
+            </div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <h4 id="about-card-name">melody-rain</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-dbd16rvloemmuxdzniplmnxxvwoz24eya9wol0b7vvmlokgqsjivmb8dnscy.min.js"></script>
+<!--SCRIPTS END-->
 
 
 
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
-
-
-<!-- mathjax config similar to math.stackexchange -->
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-</body>
+    </body>
 </html>
-
-
-<a href="https://github.com/melody-rain"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
