@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[ijkplayer硬件解码分析]]></title>
-    <link href="http://github.com/melody-rain/melody-rain.github.io/2015/10/14/ijkplayer%E2%80%9D%E2%89%A4%C2%BA%CB%9B%CE%A9%E2%80%9A%C2%AC%C3%8E%E2%88%91%C3%B7%C5%92%CB%86/"/>
-    <id>http://github.com/melody-rain/melody-rain.github.io/2015/10/14/ijkplayer”≤º˛Ω‚¬Î∑÷Œˆ/</id>
+    <link href="http://github.com/melody-rain/melody-rain.github.io/2015/10/14/ijkplayer%E7%A1%AC%E4%BB%B6%E8%A7%A3%E7%A0%81%E5%88%86%E6%9E%90/"/>
+    <id>http://github.com/melody-rain/melody-rain.github.io/2015/10/14/ijkplayer硬件解码分析/</id>
     <published>2015-10-14T15:19:38.000Z</published>
     <updated>2015-10-14T16:00:48.000Z</updated>
     <content type="html"><![CDATA[<p>总流程图：<br><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">stream_component_open<span class="function"><span class="params">()</span> -&gt;</span></span><br><span class="line">ffpipeline_open_video_decoder<span class="function"><span class="params">()</span> -&gt;</span></span><br><span class="line">func_open_video_decoder<span class="function"><span class="params">()</span> -&gt;</span></span><br><span class="line">ffpipenode_create_video_decoder_from_android_mediacodec<span class="function"><span class="params">()</span> -&gt;</span></span><br><span class="line">reconfigure_codec_l() <span class="string">\----&gt;</span> SDL_AMediaFormatJava_createVideoFormat()</span><br><span class="line">                       <span class="string">\----&gt;</span> create_codec_l<span class="function"><span class="params">()</span> -&gt;</span> SDL_AMediaCodecJava_createByCodecName<span class="function"><span class="params">()</span> -&gt;</span></span><br><span class="line">                        <span class="string">\</span></span><br><span class="line">                         <span class="string">\----&gt;</span> SDL_AMediaCodec_configure_surface<span class="function"><span class="params">()</span> -&gt;</span> </span><br><span class="line">						       func_configure_surface()[SDL_AMediaCodecJava_configure_surface()]<span class="function"> -&gt;</span></span><br><span class="line">                               jmid_configure()[configure(MediaFormat format, Surface surface, MediaCrypto crypto, int flags) java]</span><br></pre></td></tr></table></figure>                               </p>
@@ -67,8 +67,8 @@
   
   <entry>
     <title><![CDATA[编译OpenGL ES Programming Guide 3.0]]></title>
-    <link href="http://github.com/melody-rain/melody-rain.github.io/2015/10/07/%C2%B1%E2%80%A1%E2%80%9C%C3%8EOpenGL-ES-Programming-Guide-3-0/"/>
-    <id>http://github.com/melody-rain/melody-rain.github.io/2015/10/07/±‡“ÎOpenGL-ES-Programming-Guide-3-0/</id>
+    <link href="http://github.com/melody-rain/melody-rain.github.io/2015/10/07/%E7%BC%96%E8%AF%91OpenGL%20ES%20Programming%20Guide%203.0/"/>
+    <id>http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/</id>
     <published>2015-10-07T14:22:15.000Z</published>
     <updated>2015-10-07T14:50:30.000Z</updated>
     <content type="html"><![CDATA[<p>代码在<a href="https://github.com/danginsburg/opengles3-book">github</a>，下载后有Android纯Java代码，也有纯C++代码。</p>
@@ -88,8 +88,8 @@
   
   <entry>
     <title><![CDATA[如何在github上利用hexo创建静态博客]]></title>
-    <link href="http://github.com/melody-rain/melody-rain.github.io/2015/07/06/%C2%BB%C3%81%E2%88%AB%C5%92%E2%80%98%E2%81%84github%E2%80%A6%C5%93%C2%BF%CB%9A%E2%80%9D%E2%88%9Ahexo%C2%A5%C2%A5%CE%A9%C2%AE%C3%A6%E2%89%A4%C3%83%C2%A8%E2%89%A4%C2%A9%C3%B8%C3%95/"/>
-    <id>http://github.com/melody-rain/melody-rain.github.io/2015/07/06/»Á∫Œ‘⁄github…œ¿˚”√hexo¥¥Ω®æ≤Ã¨≤©øÕ/</id>
+    <link href="http://github.com/melody-rain/melody-rain.github.io/2015/07/06/%E5%A6%82%E4%BD%95%E5%9C%A8github%E4%B8%8A%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://github.com/melody-rain/melody-rain.github.io/2015/07/06/如何在github上利用hexo创建静态博客/</id>
     <published>2015-07-06T14:36:04.000Z</published>
     <updated>2015-10-06T08:21:20.000Z</updated>
     <content type="html"><![CDATA[<h3 id="默认已经安装git_for_windows，由此可以使用git_bash。所有操作均在git_bash中进行。">默认已经安装git for windows，由此可以使用git bash。所有操作均在git bash中进行。</h3><hr>
