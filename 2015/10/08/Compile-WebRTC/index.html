@@ -13,7 +13,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"melody-rain","sameAs":["https://github.com/melody-rain","https://www.linkedin.com/profile/","mailto"]},"articleBody":"Get and compile WebRTC with webrtc-build-scripts.\nFollow the README.md of the repo to setup develop environment on ubuntu 14.04.Notice that you may need VPN if you have no access to google.\n123456$ source android/build.sh # setup several commands to pull and compile WebRTC code$ install_dependencies # install some needed libs $ install_dependencies # pull WebRTC source code$ export WEBRTC_DEBUG=true # with this you compile for debug$ build_apprtc # compile WebRTC and the example AppRTCDemo for all archs\nTo compile WebRTCDemo,1$ ninja -C /out/out_android_xx/Debug WebRTCDemo #xx stands for the arch of the target platform\nTo specify the arch(for example armv8), you may1$ export WEBRTC_ARCH=armv8\nBy default, it supports x86, x86_64, armv7 and armv8. To compile WebRTC for only one arch, do not use build_apprtc but1$ execute_build\nLook into build.sh build_apprtc calls execute_build to compile for each arch.\n123456789101112131415161718build_apprtc() &#123;    export WEBRTC_ARCH=armv7    prepare_gyp_defines &amp;&amp;    execute_build    export WEBRTC_ARCH=armv8    prepare_gyp_defines &amp;&amp;    execute_build    export WEBRTC_ARCH=x86    prepare_gyp_defines &amp;&amp;    execute_build    export WEBRTC_ARCH=x86_64    prepare_gyp_defines &amp;&amp;    execute_build&#125;\nAfter successfully compiling WebRTC you will find apks in out_android_xx.\nAppRTCDemo’s source code locates under /android/webrtc/src/webrtc/example/androidapp/\nWebRTCDemo’s source code locates under /android/webrtc/src/webrtc/example/android/\n","dateCreated":"2015-10-08T21:56:16+08:00","dateModified":"2015-10-08T23:09:52+08:00","datePublished":"2015-10-08T21:56:16+08:00","description":"","headline":"Compile WebRTC","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://github.com/melody-rain/melody-rain.github.io/2015/10/08/Compile-WebRTC/"},"publisher":{"@type":"Organization","name":"melody-rain","sameAs":["https://github.com/melody-rain","https://www.linkedin.com/profile/","mailto"]},"url":"http://github.com/melody-rain/melody-rain.github.io/2015/10/08/Compile-WebRTC/"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"melody-rain","sameAs":["https://github.com/melody-rain","https://www.linkedin.com/profile/","mailto"],"image":"source/_images/cover.jpg"},"articleBody":"Get and compile WebRTC with webrtc-build-scripts.\nFollow the README.md of the repo to setup develop environment on ubuntu 14.04.Notice that you may need VPN if you have no access to google.\n123456$ source android/build.sh # setup several commands to pull and compile WebRTC code$ install_dependencies # install some needed libs $ install_dependencies # pull WebRTC source code$ export WEBRTC_DEBUG=true # with this you compile for debug$ build_apprtc # compile WebRTC and the example AppRTCDemo for all archs\nTo compile WebRTCDemo,1$ ninja -C /out/out_android_xx/Debug WebRTCDemo #xx stands for the arch of the target platform\nTo specify the arch(for example armv8), you may1$ export WEBRTC_ARCH=armv8\nBy default, it supports x86, x86_64, armv7 and armv8. To compile WebRTC for only one arch, do not use build_apprtc but1$ execute_build\nLook into build.sh build_apprtc calls execute_build to compile for each arch.\n123456789101112131415161718build_apprtc() &#123;    export WEBRTC_ARCH=armv7    prepare_gyp_defines &amp;&amp;    execute_build    export WEBRTC_ARCH=armv8    prepare_gyp_defines &amp;&amp;    execute_build    export WEBRTC_ARCH=x86    prepare_gyp_defines &amp;&amp;    execute_build    export WEBRTC_ARCH=x86_64    prepare_gyp_defines &amp;&amp;    execute_build&#125;\nAfter successfully compiling WebRTC you will find apks in out_android_xx.\nAppRTCDemo’s source code locates under /android/webrtc/src/webrtc/example/androidapp/\nWebRTCDemo’s source code locates under /android/webrtc/src/webrtc/example/android/\n","dateCreated":"2015-10-08T21:56:16+08:00","dateModified":"2015-10-08T23:09:52+08:00","datePublished":"2015-10-08T21:56:16+08:00","description":"","headline":"Compile WebRTC","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://github.com/melody-rain/melody-rain.github.io/2015/10/08/Compile-WebRTC/"},"publisher":{"@type":"Organization","name":"melody-rain","sameAs":["https://github.com/melody-rain","https://www.linkedin.com/profile/","mailto"],"image":"source/_images/cover.jpg","logo":{"@type":"ImageObject","url":"source/_images/cover.jpg"}},"url":"http://github.com/melody-rain/melody-rain.github.io/2015/10/08/Compile-WebRTC/"}</script>
     <meta name="description" content="Get and compile WebRTC with webrtc-build-scripts. Follow the README.md of the repo to setup develop environment on ubuntu 14.04.Notice that you may need VPN if you have no access to google. 123456$ so">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Compile WebRTC">
@@ -29,6 +29,8 @@
     
         
     
+    
+        <meta property="og:image" content="http://github.com/melody-rain/melody-rain.github.io/assets/images/source/_images/cover.jpg"/>
     
     
     
@@ -47,6 +49,10 @@
 
 
     
+        
+            
+        
+    
 
 <header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
@@ -58,6 +64,8 @@
             <a class="header-right-picture " href="#about">
         
         
+            <img class="header-picture" src="/assets/images/source/_images/cover.jpg" alt="Bild des Autors">
+        
         </a>
     
 </header>
@@ -65,8 +73,23 @@
             <!-- Define author's picture -->
 
 
+
+        
+    
+
 <nav id="sidebar" data-behavior="4">
     <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/source/_images/cover.jpg" alt="Bild des Autors">
+                </a>
+                <h4 class="sidebar-profile-name">melody-rain</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>author.bio</p>
+</h5>
+                
+            </div>
         
         
             <ul class="sidebar-buttons">
@@ -417,11 +440,17 @@
         
 
 
+    
+        
+    
+
 <div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-times"></i>
         </div>
+        
+            <img id="about-card-picture" src="/assets/images/source/_images/cover.jpg" alt="Bild des Autors">
         
             <h4 id="about-card-name">melody-rain</h4>
         
