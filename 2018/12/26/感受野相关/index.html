@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="特立独行的瞄">
+    <title>感受野相关 - 特立独行的瞄</title>
+    <meta name="author" content="melody-rain">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"melody-rain","sameAs":["https://github.com/melody-rain","https://www.linkedin.com/profile/","mailto"],"image":"avata.jpeg"},"articleBody":"最近在重读目标检测的论文，着重了解了下SSD和Faster RCNN算法，发现感受野在目标检测中有比较重要作用，当然在分类问题时，感受野在网络设计上也有很大的作用。所以记录下收集到的和感受野相关的知识点。\n\n感受野是某一层能在输入图片上看到的区域，这个是理论感受野。\n感受野外的区域不起作用。\n感受野大的时候可以有更多的语义信息进来，可能就是所谓的context。\n感受野有理论感受野和有效感受野之分，有效感受野实际上很小，并且服务高斯分布，因为处于中间位置的参数对生成的feature map起的作用更大。比如3x3卷积中，处于最中心的参数被使用到的次数做多，产生的影像也很多。\n有效感受野在网络参数初始化的时候比较小，虽然训练次数的增加，有效感受野变大。\n下采样和膨胀卷积会增加感受野的尺寸，比如feature map的某个方向尺寸减半，理论感受野变成原来的2倍。\n卷积层数变深，理论感受野的尺寸也会增大。\ndropout不改变有效感受野的高斯分布\nskip connection会导致有效感受野变小。\n理论感受野的尺寸可能会比输入图像的尺寸更大\nSSD中6个尺度的feature上面的prior box的大小是不一样的，应该是依据感受野大小进行的设计，大的feature上的prior box会小一些，可以检测小的目标。小的feature上大一些，检测大的目标，因为对应的感受野会更大一些。\n\n","dateCreated":"2018-12-26T11:30:52+08:00","dateModified":"2018-12-26T18:35:18+08:00","datePublished":"2018-12-26T11:30:52+08:00","description":"","headline":"感受野相关","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://github.com/melody-rain/melody-rain.github.io/2018/12/26/感受野相关/"},"publisher":{"@type":"Organization","name":"melody-rain","sameAs":["https://github.com/melody-rain","https://www.linkedin.com/profile/","mailto"],"image":"avata.jpeg","logo":{"@type":"ImageObject","url":"avata.jpeg"}},"url":"http://github.com/melody-rain/melody-rain.github.io/2018/12/26/感受野相关/"}</script>
+    <meta name="description" content="最近在重读目标检测的论文，着重了解了下SSD和Faster RCNN算法，发现感受野在目标检测中有比较重要作用，当然在分类问题时，感受野在网络设计上也有很大的作用。所以记录下收集到的和感受野相关的知识点。  感受野是某一层能在输入图片上看到的区域，这个是理论感受野。 感受野外的区域不起作用。 感受野大的时候可以有更多的语义信息进来，可能就是所谓的context。 感受野有理论感受野和有效感受野之分">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="感受野相关">
+<meta property="og:url" content="http://github.com/melody-rain/melody-rain.github.io/2018/12/26/感受野相关/index.html">
+<meta property="og:site_name" content="特立独行的瞄">
+<meta property="og:description" content="最近在重读目标检测的论文，着重了解了下SSD和Faster RCNN算法，发现感受野在目标检测中有比较重要作用，当然在分类问题时，感受野在网络设计上也有很大的作用。所以记录下收集到的和感受野相关的知识点。  感受野是某一层能在输入图片上看到的区域，这个是理论感受野。 感受野外的区域不起作用。 感受野大的时候可以有更多的语义信息进来，可能就是所谓的context。 感受野有理论感受野和有效感受野之分">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-12-26T10:35:18.663Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="感受野相关">
+<meta name="twitter:description" content="最近在重读目标检测的论文，着重了解了下SSD和Faster RCNN算法，发现感受野在目标检测中有比较重要作用，当然在分类问题时，感受野在网络设计上也有很大的作用。所以记录下收集到的和感受野相关的知识点。  感受野是某一层能在输入图片上看到的区域，这个是理论感受野。 感受野外的区域不起作用。 感受野大的时候可以有更多的语义信息进来，可能就是所谓的context。 感受野有理论感受野和有效感受野之分">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="http://github.com/melody-rain/melody-rain.github.io/assets/images/avata.jpeg"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-c4ozcsklz4kht2pebhp44xorvyverh23toayhn7i6ubrpyedak24hv1v0hyd.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">特立独行的瞄</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+            <img class="header-picture" src="/assets/images/avata.jpeg" alt="作者的图片">
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/avata.jpeg" alt="作者的图片">
+                </a>
+                <h4 class="sidebar-profile-name">melody-rain</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>计算机视觉及深度学习</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="首页">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">首页</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="分类">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">分类</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="标签">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">标签</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="归档">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">归档</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link open-algolia-search" href="#search" title="搜索">
+                    
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">搜索</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="#about" title="关于">
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">关于</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/melody-rain" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://www.linkedin.com/profile/" target="_blank" rel="noopener" title="LinkedIn">
+                    
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/mailto" title="邮箱">
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">邮箱</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/atom.xml" title="RSS">
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            感受野相关
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2018-12-26T11:30:52+08:00">
+	
+		    12月 26, 2018
+    	
+    </time>
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <p>最近在重读目标检测的论文，着重了解了下SSD和Faster RCNN算法，发现感受野在目标检测中有比较重要作用，当然在分类问题时，感受野在网络设计上也有很大的作用。所以记录下收集到的和感受野相关的知识点。</p>
+<ol>
+<li>感受野是某一层能在输入图片上看到的区域，这个是理论感受野。</li>
+<li>感受野外的区域不起作用。</li>
+<li>感受野大的时候可以有更多的语义信息进来，可能就是所谓的context。</li>
+<li>感受野有理论感受野和有效感受野之分，有效感受野实际上很小，并且服务高斯分布，因为处于中间位置的参数对生成的feature map起的作用更大。比如3x3卷积中，处于最中心的参数被使用到的次数做多，产生的影像也很多。</li>
+<li>有效感受野在网络参数初始化的时候比较小，虽然训练次数的增加，有效感受野变大。</li>
+<li>下采样和膨胀卷积会增加感受野的尺寸，比如feature map的某个方向尺寸减半，理论感受野变成原来的2倍。</li>
+<li>卷积层数变深，理论感受野的尺寸也会增大。</li>
+<li>dropout不改变有效感受野的高斯分布</li>
+<li>skip connection会导致有效感受野变小。</li>
+<li>理论感受野的尺寸可能会比输入图像的尺寸更大</li>
+<li>SSD中6个尺度的feature上面的prior box的大小是不一样的，应该是依据感受野大小进行的设计，大的feature上的prior box会小一些，可以检测小的目标。小的feature上大一些，检测大的目标，因为对应的感受野会更大一些。</li>
+</ol>
+
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/08/16/自然场景下的文字检测/" data-tooltip="自然场景下的文字检测" aria-label="下一篇: 自然场景下的文字检测">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Diesen Beitrag teilen">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/melody-rain/melody-rain.github.io/2018/12/26/感受野相关/" title="分享到 Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/melody-rain/melody-rain.github.io/2018/12/26/感受野相关/" title="分享到 Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/melody-rain/melody-rain.github.io/2018/12/26/感受野相关/" title="分享到 Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 melody-rain. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/08/16/自然场景下的文字检测/" data-tooltip="自然场景下的文字检测" aria-label="下一篇: 自然场景下的文字检测">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Diesen Beitrag teilen">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/melody-rain/melody-rain.github.io/2018/12/26/感受野相关/" title="分享到 Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/melody-rain/melody-rain.github.io/2018/12/26/感受野相关/" title="分享到 Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/melody-rain/melody-rain.github.io/2018/12/26/感受野相关/" title="分享到 Google+">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/melody-rain/melody-rain.github.io/2018/12/26/感受野相关/">
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>分享到 Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/melody-rain/melody-rain.github.io/2018/12/26/感受野相关/">
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://github.com/melody-rain/melody-rain.github.io/2018/12/26/感受野相关/">
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>分享到 Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/avata.jpeg" alt="作者的图片">
+        
+            <h4 id="about-card-name">melody-rain</h4>
+        
+            <div id="about-card-bio"><p>计算机视觉及深度学习</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>算法研究员</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br>
+                Shanghai, China
+            </div>
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-dbd16rvloemmuxdzniplmnxxvwoz24eya9wol0b7vvmlokgqsjivmb8dnscy.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>

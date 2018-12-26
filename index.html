@@ -207,6 +207,62 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/12/26/感受野相关/">
+                            感受野相关
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-12-26T11:30:52+08:00">
+	
+		    12月 26, 2018
+    	
+    </time>
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <p>最近在重读目标检测的论文，着重了解了下SSD和Faster RCNN算法，发现感受野在目标检测中有比较重要作用，当然在分类问题时，感受野在网络设计上也有很大的作用。所以记录下收集到的和感受野相关的知识点。</p>
+<ol>
+<li>感受野是某一层能在输入图片上看到的区域，这个是理论感受野。</li>
+<li>感受野外的区域不起作用。</li>
+<li>感受野大的时候可以有更多的语义信息进来，可能就是所谓的context。</li>
+<li>感受野有理论感受野和有效感受野之分，有效感受野实际上很小，并且服务高斯分布，因为处于中间位置的参数对生成的feature map起的作用更大。比如3x3卷积中，处于最中心的参数被使用到的次数做多，产生的影像也很多。</li>
+<li>有效感受野在网络参数初始化的时候比较小，虽然训练次数的增加，有效感受野变大。</li>
+<li>下采样和膨胀卷积会增加感受野的尺寸，比如feature map的某个方向尺寸减半，理论感受野变成原来的2倍。</li>
+<li>卷积层数变深，理论感受野的尺寸也会增大。</li>
+<li>dropout不改变有效感受野的高斯分布</li>
+<li>skip connection会导致有效感受野变小。</li>
+<li>理论感受野的尺寸可能会比输入图像的尺寸更大</li>
+<li>SSD中6个尺度的feature上面的prior box的大小是不一样的，应该是依据感受野大小进行的设计，大的feature上的prior box会小一些，可以检测小的目标。小的feature上大一些，检测大的目标，因为对应的感受野会更大一些。</li>
+</ol>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/12/26/感受野相关/#post-footer" class="postShorten-excerpt_link link">
+                                评论和共享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2017/08/16/自然场景下的文字检测/">
                             自然场景下的文字检测
                         </a>
