@@ -6,27 +6,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="特立独行的瞄">
-    <title>编译OpenGL ES Programming Guide 3.0 - 特立独行的瞄</title>
+    <title>自然场景下的文字检测 - 特立独行的瞄</title>
     <meta name="author" content="melody-rain">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"melody-rain","sameAs":["https://github.com/melody-rain","https://www.linkedin.com/profile/","mailto"],"image":"avata.jpeg"},"articleBody":"代码在github，下载后有Android纯Java代码，也有纯C++代码。\nJava工程可以用IDEA打开编译然后安装apk。 \nC++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译生成apk文件再安装到手机中。\n使用模拟器的例子需要使用CMake+本地编译器编译，且需要安装PC端的OpenGL ES SDK。我安装了高通的Adreno SDK，但是用VS 2015编译成功后运行程序时崩溃，不知什么原因。Adreno号称支持OpenGL ES 3.0, 但是lib里只有2.0的。不知道是不是OpenGL ES版本不对造成的崩溃。\n例子：123456789101112131415161718$ cd opengles3-book/Chapter_2/Hello_Triangle/Android/jni$ ndk-build[armeabi] Compile thumb  : Hello_Triangle &lt;= esShader.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esShapes.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esTransform.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil.c[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil_Android.c[armeabi] Compile thumb  : Hello_Triangle &lt;= Hello_Triangle.c[armeabi] Compile thumb  : android_native_app_glue &lt;= android_native_app_glue.c[armeabi] StaticLibrary  : libandroid_native_app_glue.a[armeabi] SharedLibrary  : libHello_Triangle.so[armeabi] Install        : libHello_Triangle.so =&gt; libs/armeabi/libHello_Triangle.so$ cd ../$ ls-rw-rw-r-- 1 melody melody  615 10月  7 17:57 Android.iml-rw-rw-r-- 1 melody melody  989 10月  7 17:45 AndroidManifest.xmldrwxrwxr-x 2 melody melody 4096 10月  7 17:55 jni\nIDEA打开这个工程，然后编译后在out目录中生成./out/production/Android/Android.apk./out/production/Android/Android.unaligned.apk安装apk文件到手机即可。运行结果如下：\n","dateCreated":"2015-10-07T22:22:15+08:00","dateModified":"2015-10-07T22:50:30+08:00","datePublished":"2015-10-07T22:22:15+08:00","description":"","headline":"编译OpenGL ES Programming Guide 3.0","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/"},"publisher":{"@type":"Organization","name":"melody-rain","sameAs":["https://github.com/melody-rain","https://www.linkedin.com/profile/","mailto"],"image":"avata.jpeg","logo":{"@type":"ImageObject","url":"avata.jpeg"}},"url":"http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/"}</script>
-    <meta name="description" content="代码在github，下载后有Android纯Java代码，也有纯C++代码。 Java工程可以用IDEA打开编译然后安装apk。  C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译生成apk文件再安装到手机中。 使用模拟器的例子需要使用CMake+本地编译器编译，且需要安装PC端">
-<meta property="og:type" content="blog">
-<meta property="og:title" content="编译OpenGL ES Programming Guide 3.0">
-<meta property="og:url" content="http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/index.html">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"melody-rain","sameAs":["https://github.com/melody-rain","https://www.linkedin.com/profile/","mailto"],"image":"avata.jpeg"},"articleBody":"","dateCreated":"2018-08-16T10:17:26+08:00","dateModified":"2018-12-26T10:18:12+08:00","datePublished":"2018-08-16T10:17:26+08:00","description":"","headline":"自然场景下的文字检测","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"http://github.com/melody-rain/melody-rain.github.io/2018/08/16/自然场景下的文字检测/"},"publisher":{"@type":"Organization","name":"melody-rain","sameAs":["https://github.com/melody-rain","https://www.linkedin.com/profile/","mailto"],"image":"avata.jpeg","logo":{"@type":"ImageObject","url":"avata.jpeg"}},"url":"http://github.com/melody-rain/melody-rain.github.io/2018/08/16/自然场景下的文字检测/"}</script>
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="自然场景下的文字检测">
+<meta property="og:url" content="http://github.com/melody-rain/melody-rain.github.io/2018/08/16/自然场景下的文字检测/index.html">
 <meta property="og:site_name" content="特立独行的瞄">
-<meta property="og:description" content="代码在github，下载后有Android纯Java代码，也有纯C++代码。 Java工程可以用IDEA打开编译然后安装apk。  C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译生成apk文件再安装到手机中。 使用模拟器的例子需要使用CMake+本地编译器编译，且需要安装PC端">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="http://github.com/img/hello_trangle.png">
-<meta property="og:updated_time" content="2015-10-07T14:50:30.000Z">
+<meta property="og:updated_time" content="2018-12-26T02:18:12.617Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="编译OpenGL ES Programming Guide 3.0">
-<meta name="twitter:description" content="代码在github，下载后有Android纯Java代码，也有纯C++代码。 Java工程可以用IDEA打开编译然后安装apk。  C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译生成apk文件再安装到手机中。 使用模拟器的例子需要使用CMake+本地编译器编译，且需要安装PC端">
-<meta name="twitter:image" content="http://github.com/img/hello_trangle.png">
+<meta name="twitter:title" content="自然场景下的文字检测">
     
     
         
@@ -211,14 +206,14 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title">
-            编译OpenGL ES Programming Guide 3.0
+            自然场景下的文字检测
         </h1>
     
     
         <div class="post-meta">
-    <time datetime="2015-10-07T22:22:15+08:00">
+    <time datetime="2018-08-16T10:17:26+08:00">
 	
-		    10月 07, 2015
+		    8月 16, 2018
     	
     </time>
     
@@ -230,13 +225,7 @@
     
     <div class="post-content markdown">
         <div class="main-content-wrap">
-            <p>代码在<a href="https://github.com/danginsburg/opengles3-book">github</a>，下载后有Android纯Java代码，也有纯C++代码。</p>
-<p>Java工程可以用IDEA打开编译然后安装apk。 </p>
-<p>C++代码需要先进入一个工程的jni目录，运行ndk-build编译出动态库。然后到有AndroidManifest.xml文件的目录下，用IDEA导入此工程，然后编译生成apk文件再安装到手机中。</p>
-<p>使用模拟器的例子需要使用CMake+本地编译器编译，且需要安装PC端的OpenGL ES SDK。我安装了高通的Adreno SDK，但是用VS 2015编译成功后运行程序时崩溃，不知什么原因。Adreno号称支持OpenGL ES 3.0, 但是lib里只有2.0的。不知道是不是OpenGL ES版本不对造成的崩溃。</p>
-<p>例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> opengles3-book/Chapter_2/Hello_Triangle/Android/jni</span><br><span class="line">$ ndk-build</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esShader.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esShapes.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esTransform.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= esUtil_Android.c</span><br><span class="line">[armeabi] Compile thumb  : Hello_Triangle &lt;= Hello_Triangle.c</span><br><span class="line">[armeabi] Compile thumb  : android_native_app_glue &lt;= android_native_app_glue.c</span><br><span class="line">[armeabi] StaticLibrary  : libandroid_native_app_glue.a</span><br><span class="line">[armeabi] SharedLibrary  : libHello_Triangle.so</span><br><span class="line">[armeabi] Install        : libHello_Triangle.so =&gt; libs/armeabi/libHello_Triangle.so</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cd</span> ../</span><br><span class="line">$ ls</span><br><span class="line">-rw-rw-r-- 1 melody melody  615 10月  7 17:57 Android.iml</span><br><span class="line">-rw-rw-r-- 1 melody melody  989 10月  7 17:45 AndroidManifest.xml</span><br><span class="line">drwxrwxr-x 2 melody melody 4096 10月  7 17:55 jni</span><br></pre></td></tr></table></figure></p>
-<p>IDEA打开这个工程，然后编译后在out目录中生成<br>./out/production/Android/Android.apk<br>./out/production/Android/Android.unaligned.apk<br>安装apk文件到手机即可。<br>运行结果如下：<br><img src="/img/hello_trangle.png" alt="HelloTriangle"></p>
-
+            
             
 
         </div>
@@ -249,8 +238,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/08/Compile-WebRTC/" data-tooltip="Compile WebRTC" aria-label="上一篇: Compile WebRTC">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -259,7 +247,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/07/06/如何在github上利用hexo创建静态博客/" data-tooltip="如何在github上利用hexo创建静态博客" aria-label="下一篇: 如何在github上利用hexo创建静态博客">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/14/ijkplayer硬件解码分析/" data-tooltip="ijkplayer硬件解码分析" aria-label="下一篇: ijkplayer硬件解码分析">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -277,7 +265,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/" title="分享到 Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/melody-rain/melody-rain.github.io/2018/08/16/自然场景下的文字检测/" title="分享到 Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -285,7 +273,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/" title="分享到 Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/melody-rain/melody-rain.github.io/2018/08/16/自然场景下的文字检测/" title="分享到 Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -293,7 +281,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/" title="分享到 Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/melody-rain/melody-rain.github.io/2018/08/16/自然场景下的文字检测/" title="分享到 Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -335,8 +323,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/08/Compile-WebRTC/" data-tooltip="Compile WebRTC" aria-label="上一篇: Compile WebRTC">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -345,7 +332,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/07/06/如何在github上利用hexo创建静态博客/" data-tooltip="如何在github上利用hexo创建静态博客" aria-label="下一篇: 如何在github上利用hexo创建静态博客">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/14/ijkplayer硬件解码分析/" data-tooltip="ijkplayer硬件解码分析" aria-label="下一篇: ijkplayer硬件解码分析">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -363,7 +350,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/" title="分享到 Facebook">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/melody-rain/melody-rain.github.io/2018/08/16/自然场景下的文字检测/" title="分享到 Facebook">
                     <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
@@ -371,7 +358,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/" title="分享到 Twitter">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/melody-rain/melody-rain.github.io/2018/08/16/自然场景下的文字检测/" title="分享到 Twitter">
                     <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -379,7 +366,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/" title="分享到 Google+">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://github.com/melody-rain/melody-rain.github.io/2018/08/16/自然场景下的文字检测/" title="分享到 Google+">
                     <i class="fab fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -407,7 +394,7 @@
                 
                 
                 <li class="share-option">
-                    <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/">
+                    <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://github.com/melody-rain/melody-rain.github.io/2018/08/16/自然场景下的文字检测/">
                         <i class="fab fa-facebook" aria-hidden="true"></i><span>分享到 Facebook</span>
                     </a>
                 </li>
@@ -415,7 +402,7 @@
                 
                 
                 <li class="share-option">
-                    <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/">
+                    <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://github.com/melody-rain/melody-rain.github.io/2018/08/16/自然场景下的文字检测/">
                         <i class="fab fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
                     </a>
                 </li>
@@ -423,7 +410,7 @@
                 
                 
                 <li class="share-option">
-                    <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://github.com/melody-rain/melody-rain.github.io/2015/10/07/编译OpenGL ES Programming Guide 3.0/">
+                    <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://github.com/melody-rain/melody-rain.github.io/2018/08/16/自然场景下的文字检测/">
                         <i class="fab fa-google-plus" aria-hidden="true"></i><span>分享到 Google+</span>
                     </a>
                 </li>
